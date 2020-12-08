@@ -38,6 +38,7 @@ h1, h2 {
 }
 
 .devour-list {
+    margin-top: 10px;
     margin-left: 10px;
     border: 1px;
     border-style: solid;
@@ -72,6 +73,7 @@ h1, h2 {
 }
 
 .devoured-list {
+    margin-top: 10px;
     margin-left: 10px;
     border: 1px;
     border-style: solid;
@@ -88,7 +90,7 @@ h1, h2 {
     text-align: center;
 }
 
-#ca {
+#bu {
     height: 25px;
     width: 250px;
     margin-bottom: 20px;
@@ -110,6 +112,8 @@ h1, h2 {
 
 #form-button:hover {
     background-color: #64a7ee;
+}
 
-
+.close-button {
+    float: right;
 }

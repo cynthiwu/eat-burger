@@ -24,7 +24,7 @@ function objToSql(ob) {
                 value = "'" + value + "'";
             }
 
-            arr.push(key + "=" + value);
+            arr.push(key + " = " + value);
         }
     }
 
@@ -47,10 +47,11 @@ const orm = {
    insertOne: function(table, cols, vals, cb) {
        let queryString = "INSERT INTO " + table;
 
-       querystring += " (";
+       queryString += " (";
        queryString += cols.toString();
        queryString += ") ";
-       querytring += printQuestionMarks(vals.length);
+       queryString += "VALUES (";
+       queryString += printQuestionMarks(vals.length);
        queryString += ") ";
 
        console.log(queryString);
@@ -73,15 +74,34 @@ const orm = {
        queryString += condition;
 
        console.log(queryString);
-       connection.query(querySTring, function (err, result) {
-           if (err) {
+       connection.query(queryString, function (err, result) {
+            console.log(result);
+
+            if (err) {
                throw err;
            }
 
            cb(result);
        })
-
    },
+
+   deleteOne: function(table, condition, cb) {
+    let queryString = "DELETE FROM " + table;
+
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
+         console.log(result);
+
+         if (err) {
+            throw err;
+        }
+
+        cb(result);
+    })
+},
 }
 
 module.exports = orm;
