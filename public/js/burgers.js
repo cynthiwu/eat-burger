@@ -1,8 +1,8 @@
 $(function() {
-    console.log("Test test test")
+    
+    // Adding event listener to devour button
     $(".devour-button").on("click", function(event){
         const id = $(this).data("id");
-        // const newDevour = $(this).data("devoured");
         const newDevour = "true";
 
         console.log(id);
@@ -26,12 +26,14 @@ $(function() {
         );   
     });
 
+    // Adding event listener to the submit form button
     $("#form-button").on("click", function(event) {
         event.preventDefault();
         const newBurger = {
             burger_name: $("#bu").val().trim(),
         };
 
+        // Send the PUT request.
         $.ajax("api/burgers", {
             type: "POST",
             data: newBurger
@@ -43,10 +45,13 @@ $(function() {
         );
     });
 
+    // Adding event listener to the close buttons
     $(".close-button").on("click", function(event) {
         event.preventDefault();
 
         const id = $(this).data("id");
+
+        // Send the DELETE request.
 
         $.ajax("/api/burgers/" + id, {
             type: "DELETE",

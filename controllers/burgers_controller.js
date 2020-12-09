@@ -5,6 +5,7 @@ const router = express.Router();
 
 const burger = require("../models/burger.js");
 
+// API route for getting all
 router.get("/", function(req, res) {
     burger.all(function(data) {
         const undevoured = data.filter(burger => burger.devoured === 0); 
@@ -18,6 +19,7 @@ router.get("/", function(req, res) {
     });
 });
 
+// API route for adding a burger
 router.post("/api/burgers", function(req,res) {
     console.log("API burger route")
     burger.insert(["burger_name"], [req.body.burger_name], function(result) {
@@ -25,6 +27,7 @@ router.post("/api/burgers", function(req,res) {
     });
 });
 
+// API route for changing the devoured state of a burger
 router.put("/api/burgers/:id", function(req, res) {
     const condition = "id = " + req.params.id;
 
@@ -44,6 +47,7 @@ router.put("/api/burgers/:id", function(req, res) {
     );
 });
 
+// API route for deleting a burger
 router.delete("/api/burgers/:id", function(req, res) {
     const condition = "id = " + req.params.id;
 
