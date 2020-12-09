@@ -2,7 +2,7 @@
 
 Explore the [project page](https://github.com/cynthiwu/eat-burger)
 
-View it live on [Heroku]()
+View it live on [Heroku](https://salty-badlands-51907.herokuapp.com/)
 
 ## Table of Contents
 - [About The Project](#about-the-project)
@@ -79,4 +79,4 @@ None
 Cynthia Wu - [@cynthia21wu](https://twitter.com/cynthia21wu) - cynthia21wu@gmail.com
 
 Project Link: [https://github.com/cynthiwu/note-taker](https://github.com/cynthiwu/eat-burger)
-Live Link:[]()
+Live Link:[https://salty-badlands-51907.herokuapp.com/](https://salty-badlands-51907.herokuapp.com/)
