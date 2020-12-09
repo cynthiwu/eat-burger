@@ -1,5 +1,4 @@
 // Setting up dependencies and setting up node to Myql //
-const e = require("express");
 const mysql = require("mysql");
 
 const connection;
