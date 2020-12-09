@@ -1,7 +1,7 @@
 // Setting up dependencies and setting up node to Myql //
 const mysql = require("mysql");
 
-const connection;
+let connection;
 
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
